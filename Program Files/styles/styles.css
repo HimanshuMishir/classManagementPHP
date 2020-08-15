@@ -1,0 +1,39 @@
+h1{
+    font-size: 18px;
+    color: #000;
+    text-align: center;
+    margin-top: auto;
+    margin-bottom: 20px;
+}
+table{
+    border-collapse: collapse;
+    background-color: #fff;
+    box-shadow: 0 10px 0 rgba(158, 8, 8, 0.3);
+    border-radius: 10px;
+    margin: auto;
+    margin-top: 20px;
+    border-color: rgb(250, 75, 75); 
+}
+th,td{
+    border: 1px solid #ee4e4e;
+    padding: 8px 20px;
+    text-align: center;
+}
+th{
+    text-transform: uppercase;
+    font-weight: 500;
+    color: royalblue;
+}
+td{
+    font-size: 13px;
+    color: rgb(250, 75, 75);
+}
+.fa{
+    font-size: 18px;
+}
+.fa-pencil-square-o{
+    color: #63c76a;
+}
+.fa-trash{
+    color: red;
+}
