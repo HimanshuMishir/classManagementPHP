@@ -4,7 +4,7 @@ include "connection.php";
 
 $id = $_GET['id'];
 
-$deletequery = " delete from students where student_id={$id}";
+$deletequery = " delete from students where s_id={$id}";
 
 $res = mysqli_query($conn,$deletequery);
 

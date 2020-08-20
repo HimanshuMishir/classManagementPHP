@@ -31,118 +31,66 @@ $query3 = mysqli_query($conn, $seletquery3);
 $query2 = mysqli_query($conn, $seletquery2);
 $query1 = mysqli_query($conn, $seletquery1);
 
-$num12 = mysqli_num_rows($query12);
-$num11 = mysqli_num_rows($query11);
-$num10 = mysqli_num_rows($query10);
-$num9 = mysqli_num_rows($query9);
-$num8 = mysqli_num_rows($query8);
-$num7 = mysqli_num_rows($query7);
-$num6 = mysqli_num_rows($query6);
-$num5 = mysqli_num_rows($query5);
-$num4 = mysqli_num_rows($query4);
-$num3 = mysqli_num_rows($query3);
-$num2 = mysqli_num_rows($query2);
-$num1 = mysqli_num_rows($query1);
+$std12 = mysqli_num_rows($query12);
+$std11 = mysqli_num_rows($query11);
+$std10 = mysqli_num_rows($query10);
+$std9 = mysqli_num_rows($query9);
+$std8 = mysqli_num_rows($query8);
+$std7 = mysqli_num_rows($query7);
+$std6 = mysqli_num_rows($query6);
+$std5 = mysqli_num_rows($query5);
+$std4 = mysqli_num_rows($query4);
+$std3 = mysqli_num_rows($query3);
+$std2 = mysqli_num_rows($query2);
+$std1 = mysqli_num_rows($query1);
 
 ?>
-<div class="text-center">
-<button class="btn btn-primary">Number Of Students In Each Standards</button>
 
-    <table class="table table-striped">
-        <thead>
-            <th> Standard </th>
-            <th>Number of students</th>
-        </thead>
-        <tbody>
-            <tr>
-                <td>1</td>
-                <td><?php echo $num1;?></td>
-            </tr>
-            <tr>
-                <td>2</td>
-                <td><?php echo $num2;?></td>
-            </tr> 
-            <tr>
-                <td>3</td>
-                <td><?php echo $num3;?></td>
-            </tr> 
-            <tr>
-                <td>4</td>
-                <td><?php echo $num4;?></td>
-            </tr> 
-            <tr>
-                <td>5</td>
-                <td><?php echo $num5;?></td>
-            </tr> 
-            <tr>
-                <td>6</td>
-                <td><?php echo $num6;?></td>
-            </tr> 
-            <tr>
-                <td>7</td>
-                <td><?php echo $num7;?></td>
-            </tr> 
-            <tr>
-                <td>8</td>
-                <td><?php echo $num8;?></td>
-            </tr> 
-            <tr>
-                <td>9</td>
-                <td><?php echo $num9;?></td>
-            </tr> 
-            <tr>
-                <td>10</td>
-                <td><?php echo $num10;?></td>
-            </tr> 
-            <tr>
-                <td>11</td>
-                <td><?php echo $num11;?></td>
-            </tr> <tr>
-                <td>12</td>
-                <td><?php echo $num12;?></td>
-            </tr> 
-        </tbody>
-    </table>
+<br>
 
-</div>
+
 
 <div class="row">
 
-    <form class=" col-lg-6 form-inline my-2 my-lg-0" method="post" action="backend.php">
-        <div class="text-center" style="text-align:center; font-size: 150%; margin:auto">
-            <div class="formheading">
-                <h1 style="margin-top: 20px;">
-                    Enter Details to search!
-                </h1>
+    <form class=" col-lg-6" method="GET" action="teacher_student.php">
+        <div class="text-center"><br>
+            <button type="button" class="btn btn-outline-success my-2 my-sm-0" style="cursor: auto;">Let's see which teacher is teaching which subject to a particular student.</button>
+            <div class="form-group">
+                <label for="select">Select Subject :</label>
+                <select class="form-control" name="sub" id="sub" required>
+                    <option value="Hindi">Hindi</option>
+                    <option value="English">English</option>
+                    <option value="Marathi">Marathi</option>
+                    <option value="Math">Math</option>
+                    <option value="Science">Science</option>
+                    <option value="Social Studies">Social Studies</option>
+                </select>
             </div>
-            <label>Name</label>
-            <input class="form-control mr-sm-2" type="search" name="search" placeholder="Search" aria-label="Search">
-            <button class="btn btn-outline-success my-2 my-sm-0" type="submit">Search</button>
+            <button class="btn btn-outline-success my-2 my-sm-0" type="submit" name="search">Search Teacher</button>
+        </div>
+        <br>
+    </form>
+
+
+
+
+    <form action="t_search.php" method="GET" class="col-lg-6 text-center">
+        <br>
+        <button type="button" class="btn btn-outline-success my-2 my-sm-0" style="cursor: auto; margin-top: 20px;">Search by Teacher Name</button>
+        <div class="text-center">
+            <div class="form-group">
+                <label for="form">Enter Teacher Name..</label>
+                <input name="t_name" id="form" class="form-control" type="text" placeholder="Search Teacher" name="teacher">
+            </div>
+            <button name="tSearch" class="btn btn-outline-success my-2 my-sm-0">Which Subject is taught by this teacher?</button>
         </div>
     </form>
 
 
-    <div class="col-lg-6 text-center">
-        <form action="backend.php" method="post" class="form-inline my-2 my-lg-0">
-
-            <label>Enter Teacher Name..</label>
-            <input name="tName" class="form-control mr-sm-2" type="search" placeholder="Search Teacher" name="teacher">
-            <button name="tSearch" class="btn btn-outline-success my-2 my-sm-0">Which Teacher is teaching which Subject?</button>
-        </form>
-    </div>
-
 </div>
+<hr style="color:red; width:100%; border:1px solid">
+
 
 <?php
 include "./components/bootstrapjs.php";
-?>
-
-<?php
-
-include "connection.php";
-if (isset($_POST['search'])) {
-    # code...
-    $name = $_POST['search'];
-}
-
 ?>

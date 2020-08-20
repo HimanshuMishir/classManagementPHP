@@ -11,7 +11,6 @@ $res = mysqli_query($conn,$deletequery);
 if ($res) {
     header("Location: teachers.php");
 }else{
+    echo mysqli_error($res);
 echo "Some error occured while deleting the data!";
 }
-
-?>
