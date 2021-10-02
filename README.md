@@ -1,2 +1,2 @@
 # A simpli class Management site.
-<p>Made Using PHP,MySQL</p>
+<p>Made Using PHP,SQLite</p>
